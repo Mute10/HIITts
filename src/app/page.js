@@ -299,10 +299,75 @@ function* projectZ(Attendence) { //1
 
 }
 const results = projectZ()
-console.log(results.next())
+//console.log(results.next())
+
+
+const project4 =  {//2
+    name: "Frank",
+    age: 72,
+    location: "Michigan",
+    build4: () => {
+        let storage = `${project4.name}` +  `, ${project4.age}`
+        let residency = `, ${project4.location}`
+        //console.log(storage + residency)
+    }
+    }
+    project4.build4()
+    
+
+
+    function* project20() { //3
+        let score = 88
+    yield score;
+    let result = Math.ceil(score) * 7.432
+    if (result >= 860) yield "STOP"
+    else yield "Below expected output"
+    
+    yield score /2;
+}
+    const project202 = project20()
+      for (const val of project20()) {
+   //console.log(val)
+      }
+      const allValues = Array.from(project20(), val => `Value: ${val}`)
+      //console.log(allValues)
+      
+
+
+function* frequency(nums = [Math.ceil(Math.random() *499 + 150), Math.ceil(Math.random() *499 + 150),
+    Math.ceil(Math.random() *499 + 150), Math.ceil(Math.random() *499 +150)
+]) { //4
+    
+    let result = []
+    let msg = ""
+    const limit = 500
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > limit){
+        msg =  `Can't go above ${limit}`
+        }  else {
+            msg = "Frequency is fully operational"
+        }
+
+        if (nums[i] > 200 && nums[i] < 400) {
+            result.push(nums[i])
+          msg = ` Hidden frequency found at: ${nums[i]}.` 
+        } else {
+            msg =  "No hidden frequency detected"
+        }
+        yield msg
+    }
+yield result
+}
+
+//console.log(sum.next())
+for (const val of frequency()){
+    console.log(val)
+}
+
+
 
 /*
-functions: polish my includes, next and length
+functions: polish my includes, next array of arrays
 generator function, async, constructor, class Method,
  
 public 
