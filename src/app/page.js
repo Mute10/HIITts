@@ -337,7 +337,7 @@ const project4 =  {//2
 function* frequency(nums = [Math.ceil(Math.random() *499 + 150), Math.ceil(Math.random() *499 + 150),
     Math.ceil(Math.random() *499 + 150), Math.ceil(Math.random() *499 +150)
 ]) { //4
-    
+
     let result = []
     let msg = ""
     const limit = 500
@@ -358,11 +358,63 @@ function* frequency(nums = [Math.ceil(Math.random() *499 + 150), Math.ceil(Math.
     }
 yield result
 }
-
 //console.log(sum.next())
 for (const val of frequency()){
-    console.log(val)
+    //console.log(val)
 }
+
+
+
+function* build_a_house(supplies) { //5
+    yield "Monday"
+    let money = ["Bricks to build houses and libraries", "tools", "counting coins"]
+    let clothingStore = "High Quality fabric"
+    yield "Tuesday"
+    for (let i = 0; i < supplies.length; i++) {
+    if (supplies[i].split("").filter(l => ["b", "B"].includes(l)).length > 0) {
+        money.push(supplies[i])
+       // console.log(money)
+        yield "STOP"
+    } else {
+        delete money[1]
+        money.splice(1, 1, clothingStore) 
+        break
+    }
+    
+ }
+return money
+}
+for (const val of build_a_house(["hammer", "brick", "stone", "leaf", "Tree"])) {
+ 
+}
+
+
+
+const smallChoices = function*() { //6
+    yield "GO"
+    yield "STOP"
+let dreams = {date: "10/9/25", goal: "build something.", cancel: "Let's cancel the project."};
+for (const key in dreams) {
+    let val = dreams[key]
+    if (typeof val === "string") {
+        val = val.replace("build", "create")
+    }
+    yield val
+}
+
+}
+for (const val of smallChoices()) {
+console.log(val)
+}
+
+
+const bigChoices = () => ({ //7
+*[Symbol.iterator]() {
+
+}
+})
+
+
 
 
 
