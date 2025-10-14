@@ -401,26 +401,78 @@ for (const key in dreams) {
     }
     yield val
 }
-
 }
 for (const val of smallChoices()) {
-console.log(val)
+//console.log(val)
 }
 
 
 const bigChoices = () => ({ //7
 *[Symbol.iterator]() {
-
+yield "firewall";
+yield {secretCode: 7293, name: "Cube", type: "OD10"}
+yield "packet send"
 }
 })
+let result = {};
+let randomObj = {name: "Mike", location: "FL", job: "conductor"}
+let count = 0
+for (const val of bigChoices()) {
+ if (typeof val === "object") {
+    Object.assign(result, val)
+ } else {
+    result[`message ${count}`] = val;
+    Object.assign(result, randomObj)
+    count++
+ }
+ //console.log(result)
+}
+
+
+
+const superComputer = () => ({
+    *[Symbol.iterator] () {
+        yield "Firewall"
+        yield "Data Breach"
+        yield 100.1
+        yield {Q1: "Test Phase", Q2: "Final Preparations", Q3: "Mass Production", Q4: "No major projects"
+        }
+    }
+})
+let testResults = {}
+let counterr  = 0
+const l = ["e", "c"]
+let testObj = {name: "4X-290", type: "weapon", progress: "80%", malfunctions: 2}
+const superData = [...superComputer()]
+for (const val of superData) {
+    if (typeof val === "object") {
+        const matches = Object.entries(val).filter(([_, value]) => 
+        l.some(xyz => value.toString().toLowerCase().includes(xyz))
+        );
+        Object.assign(testResults, testObj)
+        if (matches.length > 0) {
+            testResults[`object_${counterr}`] = matches
+            counter++
+        } 
+    } else if (
+    typeof val === "string" &&
+    l.some(xyz => val.toLowerCase().includes(xyz))
+  ) {
+    testResults[`match_${counterr}`] = val;
+    counterr++;
+  }
+}
+console.log(testResults)
+
+
+//create a function generator w/ include, array of arrays, inside a class w/ constructor method,and async
 
 
 
 
 
 /*
-functions: polish my includes, next array of arrays
-generator function, async, constructor, class Method,
+
  
 public 
  private 
