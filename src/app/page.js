@@ -185,7 +185,7 @@ return newSolution
 buildHighSum()
 
 
-//
+
 buildLowSum([-20, -2, -33, -404, "bad error"]); //5
 function buildLowSum(arr) {
     let Result = [];
@@ -462,32 +462,55 @@ for (const val of superData) {
     counterr++;
   }
 }
-console.log(testResults)
+//console.log(testResults)
 
 
-//create a function generator w/ include, array of arrays, inside a class w/ constructor method,and async
+//create a function generator w/ include, followed by async function.
+//  filter, shift, unshift, indexOf
 
-
+class LlcInc { 
+    constructor(city, terminal) {
+        this.city = city
+        this.terminal = terminal
+    }
+    dreamWorks = () => {
+        let result = {}
+        let cityLimits = {name: "Shinjuku", population: 1500000, km: 50, trains: "Bullet and regular"}
+        let foodStalls = {takoyaki: "seafood", sushi: "salmon", rice: 1, RedLightDistrict: "Avoid"}
+        let policeBox = [["kobayashi", "shinkai", "koga", "asaskua"], [1.2, 5, 3.3, 9]]
+        for (const key in cityLimits) {
+            let val = cityLimits[key]
+            for (const key2 in foodStalls) {
+                let doubleVal = foodStalls[key2]
+                if (typeof val == "string" && (["a, b, d, t"]).some(element => val.toLowerCase().endsWith(element))) {
+                    Object.assign(result, val)
+                    Object.freeze(result)
+                    console.log(result)
+                } else {
+                    result = policeBox.map(box => box.join(" - "))
+                    Object.create({packetSend: "null"})
+                }
+                if (typeof doubleVal === "string" && (["v", "j", "k", "m"]).some(element2 => 
+                    doubleVal.toLowerCase().startsWith(element2))) {
+                   Object.values(result, foodStalls)
+                    result = JSON.stringify(result)
+                } else {
+                    const ObjResult = JSON.parse(policeBox).map(element3 => element3.filter(
+                        e => typeof e === "string")).filter(element3 => element3.length > 0)
+                        Object.fromEntries(foodStalls).filter( e => ["i", "u"] ).split()
+                }
+            }
+        }
+        return result
+    }
+}
+const llc = new LlcInc("Tokyo", "Haneda Terminal")
+llc.dreamWorks()
 
 
 
 /*
-
- 
-public 
- private 
-protected 
-readonly 
- as 
-declare 
- keyof 
-instanceof 
- is 
-asserts 
-unknown 
-void 
- any 
-
+//
 global functions--
 isFinite 
 isNaN 
@@ -495,63 +518,42 @@ parseFloat
  parseInt 
 decodeURI
 decodeURIComponent
-encodeURI
-encodeURIComponent
 setTimeout
 clearTimeout
 setInterval
 clearInterval
 structuredClone
 
+
 string methods--
 charAt
 charCodeAt
 codePointAt
- endsWith
-includes
-indexOf
 lastIndexOf
 match
  matchAll
 repeat
 replace
 replaceAll
-split
-startsWith
 substring
-toLowerCase
-toUpperCase
 trim
 trimEnd
 trimStart
-at
-entries
-every
 fill
-filter
 find
 findIndex
 flat
-flatMap
 forEach
-includes
-indexOf
 join
 keys
-lastIndexOf
-map
-pop
-push
 reduce
 reverse
-shift
 slice
 some
 sort
 splice
-toLocaleString
-unshift
 values
+
 
 Object Methods---
 Object.assign
@@ -581,7 +583,6 @@ Math.exp
 Math.floor
 Math.hypot
 Math.log
-Math.log2
 Math.max
 Math.min
 Math.pow
@@ -590,6 +591,29 @@ Math.round
 Math.sign
 Math.sqrt
 Math.trunc
+
+
+Map Methods--
+map.prototype.add
+Map.prototype.delete
+Map.prototype.forEach
+
+
+Set Methods--
+Set.prototype.add
+Set.prototype.delete
+Set.prototype.forEach
+
+
+Promise Methods--
+Promise.all
+Promise.any
+Promise.race
+Promise.reject
+Promise.resolve
+Promise.prototype.catch
+Promise.prototype.then
+
 
 Date Methods--
 getDate
@@ -607,58 +631,5 @@ setMinutes
 setMonth
 setSeconds
 setTime
-toDateString
-toISOString
-toJSON
-toLocaleDateString
-toLocaleString
-toLocaleTimeString
-toString
-toTimeString
-valueOf
-
-RegExp Methods--
-exec
-test
-
-JSON Methods--
-JSON.parse
-JSON.stringify
-
-Console Methods--
-console.assert
-console.debug
-console.group
-console.info
-console.log
-console.time
-console.timeEnd
-console.trace
-console.warn
-
-Map Methods--
-Map.prototype.delete
-Map.prototype.forEach
-Map.prototype.get
-Map.prototype.has
-Map.prototype.set
-Map.prototype.values
-
-Set Methods--
-Set.prototype.add
-Set.prototype.delete
-Set.prototype.forEach
-Set.prototype.has
-Set.prototype.values
-
-Promise Methods--
-Promise.all
-Promise.any
-Promise.race
-Promise.reject
-Promise.resolve
-Promise.prototype.catch
-Promise.prototype.finally
-Promise.prototype.then
 
 */
