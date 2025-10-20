@@ -465,8 +465,6 @@ for (const val of superData) {
 //console.log(testResults)
 
 
-//create a function generator w/ include, followed by async function.
-//  filter, shift, unshift, indexOf
 
 class LlcInc { 
     constructor(city, terminal) {
@@ -485,19 +483,18 @@ class LlcInc {
                 if (typeof val == "string" && (["a, b, d, t"]).some(element => val.toLowerCase().endsWith(element))) {
                     Object.assign(result, val)
                     Object.freeze(result)
-                    console.log(result)
                 } else {
-                    result = policeBox.map(box => box.join(" - "))
+                    result = policeBox.map(box => box.slice(0, 2).join(" "))
                     Object.create({packetSend: "null"})
+                    //console.log(result)
                 }
                 if (typeof doubleVal === "string" && (["v", "j", "k", "m"]).some(element2 => 
                     doubleVal.toLowerCase().startsWith(element2))) {
                    Object.values(result, foodStalls)
                     result = JSON.stringify(result)
                 } else {
-                    const ObjResult = JSON.parse(policeBox).map(element3 => element3.filter(
-                        e => typeof e === "string")).filter(element3 => element3.length > 0)
-                        Object.fromEntries(foodStalls).filter( e => ["i", "u"] ).split()
+                    const ObjResult = JSON.stringify(policeBox)
+                        Object.freeze(foodStalls)
                 }
             }
         }
@@ -507,6 +504,135 @@ class LlcInc {
 const llc = new LlcInc("Tokyo", "Haneda Terminal")
 llc.dreamWorks()
 
+
+
+
+class Indigo {
+    constructor(batteryType) {
+        this.batteryType = batteryType
+    }
+    budget(num) {
+        let task = [103, 131, 312, 313, 134, 310, 211, 212, 113, 414,
+            110, 111, 152, 133, 194, 120, 2.01 **10, 122, 193, 140, Math.ceil(Math.random() *2500.12 * 175)]
+            let tasksCompleted = task.filter(e => e > 175)
+            //console.info(tasksCompleted)
+    }
+}
+const indigo = new Indigo("2 AAs")
+indigo.budget(10)
+
+
+
+class decodeToy {
+    constructor(toy, electronic) {
+        this.toy = toy
+        this.electronic = electronic
+    }
+    *toyWorks() {
+        yield "Toys"
+        let toyList = [["Spawn", "Spider Man", "TMNT", "Crash Bandicoot"], [9.99, 9.99, 6.99, 7.99]]
+        let editedList = toyList.map(e => e.filter(oe => !oe.toString().includes("7")).map(oe =>
+            typeof oe === "string" ? oe.replace(/m/gi, "xx") : oe))
+        let result = []
+        result.push(editedList)
+        yield "Bacon Saver"
+        yield 10
+        yield result
+    } 
+}
+const toyBox = new decodeToy("Toy Box!", "RC Car")
+for (const val of toyBox.toyWorks()){
+            //console.log(val)
+        }
+
+
+
+class SoapCo {
+    constructor() {
+
+    }
+    chemicals() {
+        let chemicals = ["Sodium Hydroxide(NaOH)", "Potassium Hydroxide(KOH)", "Sodium Carbonate",
+            "Cocamidopropyl Betaine"
+        ]
+        let recommendedChemicals = []
+        let notUsed = ["linalool", "limonene hydroperoxides", "hydroxyisohexyl", "treemoss absolute",
+        "isoeugenol", "cinnamyl alcohol"]
+
+        for (let i = 0; i < chemicals.length; i++) {
+            if (chemicals.length < notUsed.length) {
+                 let badElements = notUsed.filter(e => !e.includes("h"))
+                 recommendedChemicals.push(...badElements)
+                break;
+                
+            } else {
+               let goodElements = chemicals.filter(e => e.includes("h").toLowerCase())
+               recommendedChemicals.push(...goodElements)
+                
+            }
+        }
+        return recommendedChemicals
+        
+    }
+}
+const soap = new SoapCo()
+soap.chemicals()
+
+
+
+class Planets {
+    constructor(stars, moons) {
+        this.star = stars
+        this.moons = moons
+    }
+    mainMenu(nums = []) {
+        let result = []
+        let counter = 0
+        let stats = [Math.random()*70 + 10, Math.random() * 80 + 15, Math.random()*70 + 15,
+            Math.random()*100 + 10, Math.random()*170 + 20
+        ]
+        for (i = 0; i < stats.length; i ++) {
+            if (nums.length > stats.length) {
+                counter++;
+                result.push(stats.filter(e => e > 25).map(e => Math.floor(e)))
+            } else {
+                counter++;
+                let lowStats = stats.filter(e => e < 25)
+                result.push(lowStats)
+            }
+        }
+        console.log(result)
+        console.log(`${counter}`)
+        return result
+    }
+}
+const planets = new Planets("nebulous", "black hole")
+planets.mainMenu([11, 17, 66, 55, 34, 99, 99])
+
+
+//let taksCompleted = task.filter(e => e.toString().startsWith("2") && e.toString().endsWith("2"))
+//numbers.map(num => num > 10 ? num * 2 : num);
+//const filtered = numbers.filter(num => num > 10 ? true : false);
+         // let data = [[103, 131, 312],[212, 220, 222],[120, 122, 194],[313, 333, 310]];
+//let endsWith2 = data.filter(inner => inner.some(num => num.toString().endsWith("2")));
+//let names = ["mike", "sarah", "john"];
+
+//let capitalized = names.map(name => name.toUpperCase());
+//nums.forEach(num => {result.push(num - 20);});
+//let nums = [10, 20, 30, 40];
+
+//let total = nums.reduce((acc, curr) => acc + curr, 0);
+
+//let filteredObj = Object.fromEntries(
+  //Object.entries(scores).filter(([name, score]) => score >= 80));
+
+//let total = Object.values(scores).reduce((acc, val) => acc + val, 0);
+
+//const word = "Aloha";
+
+//for (let i = 0; i < word.length; i++) {
+  //console.log(`Index ${i}: ${word.charAt(i)} -> ${word.charCodeAt(i)}`);
+//}
 
 
 /*
@@ -526,8 +652,6 @@ structuredClone
 
 
 string methods--
-charAt
-charCodeAt
 codePointAt
 lastIndexOf
 match
@@ -578,15 +702,12 @@ Number.prototype.toString
 
 Math Methods---
 Math.abs
-Math.ceil
 Math.exp
-Math.floor
 Math.hypot
 Math.log
 Math.max
 Math.min
 Math.pow
-Math.random
 Math.round
 Math.sign
 Math.sqrt
