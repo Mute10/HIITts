@@ -601,8 +601,8 @@ class Planets {
                 result.push(lowStats)
             }
         }
-        console.log(result)
-        console.log(`${counter}`)
+        //console.log(result)
+        //console.log(`${counter}`)
         return result
     }
 }
@@ -610,29 +610,167 @@ const planets = new Planets("nebulous", "black hole")
 planets.mainMenu([11, 17, 66, 55, 34, 99, 99])
 
 
-//let taksCompleted = task.filter(e => e.toString().startsWith("2") && e.toString().endsWith("2"))
-//numbers.map(num => num > 10 ? num * 2 : num);
-//const filtered = numbers.filter(num => num > 10 ? true : false);
-         // let data = [[103, 131, 312],[212, 220, 222],[120, 122, 194],[313, 333, 310]];
-//let endsWith2 = data.filter(inner => inner.some(num => num.toString().endsWith("2")));
-//let names = ["mike", "sarah", "john"];
 
-//let capitalized = names.map(name => name.toUpperCase());
+class Globe {
+    *weather(stats = [Math.random() *50 + 20, Math.random() *50 + 20, Math.random() *50 + 20, 
+        Math.random() *50 + 15
+    ]) {
+        yield 19.99;
+        yield "STOP"
+         let result = []
+         let nums = [22, 22, 23, 23, 25, 29]
+         for (let i = 0; i < Math.min(stats.length, nums.length); i++) {
+            if (nums[i] <= stats[i]) {
+                result.push(Math.ceil(stats[i]))
+            }
+            else {
+                stats.pop()
+            }
+         }
+yield result
+
+    } 
+}
+const countries = new Globe()
+for (const val of countries.weather()){
+            //console.log(val)
+        }
+
+
+
+        class CrownsLibrary {
+            constructor(book){
+                this.book = "Think rich and grow"
+            }
+            libraryBooks = () => {
+                let rentedBooks = [["lost and found", "hunting voyage", "avoiding scams", "clowns"], ["hollywood",
+                    "happy trees", "viruses", "Deuced", "Wavy River"
+                ]]
+                let missingBooks = ["Jason", "Halloween", "Halloween Pranks"]
+                let result = []
+                const regexStart = /^(h|c)/i; 
+                const regexEnd = /(r|b)$/i;
+                const returnedBooks = rentedBooks.map(inner => inner.filter(e => !regexStart.test(e) &&
+                !regexEnd.test(e)))
+
+                for (const arr of returnedBooks) {
+                        if (arr.length > 0) {
+                            result.push(arr)
+                            //console.log(result)
+                        } else {
+                            result.concat(missingBooks += javaScript)
+                        }
+                        
+                }
+                return result
+            }
+        }
+        const closedLibrary = new CrownsLibrary()
+        closedLibrary.libraryBooks("Book theft is common!")
+
+
+
+class SeventyOne {
+constructor(nine){
+    this.nine = nine
+}
+*[Symbol.iterator]() {
+    yield 1097
+    yield "beginning transfer"
+    yield "STOP"
+    let result = ""
+    let counter = 0
+
+     if (Array.isArray(this.nine)) {
+         for (let i = 0; i < this.nine.length; i++){
+        yield "is nine a list?"
+            result += this.nine[i]
+            counter++
+         }
+        } else {
+            counter--
+            result += `${this.nine} isn't a list`
+        }
+        yield result
+
+}
+}
+const bigSeven = new SeventyOne(Math.ceil(Math.random() *35 + 1))
+for (const value of bigSeven) {
+    //`console.log(value)
+}
+
+
+class B2L10 {
+    constructor(fiberCable) {
+      this.wired = fiberCable
+    }
+    *[Symbol.iterator]() {
+        let result = []
+        let mathList = Math.ceil(Math.random() * 200 +1)
+        let mathList2 = Math.floor(Math.random() *200 + 1)
+        let data = [[Math.trunc(Math.random()*700 + 10), Math.abs(Math.random()*700 + 17, 
+        Math.hypot(Math.random()*700+18))], [Math.floor(Math.random()*500 + 50), Math.floor(Math.random()*500 + 50),
+            Math.floor(Math.random()*500 + 50), Math.floor(Math.random()*500 + 50), Math.floor(Math.random()*500 + 50)
+        ]]
+        if (mathList >= mathList2) {
+            result = mathList += mathList2
+             data = data.map(m => m >= Math.floor(Math.random() *800 +90)).some(e => e / 10 ? e * 8: e)
+            console.log(data)
+        } else if (mathList < mathList2) {
+            data = data.map(n => n > 225 ? n * 3 + 4: n).some(element => 
+                element / 4 ? element * 4: element)
+            console.log(data)
+            result = mathList2 += mathList
+        }
+        yield result
+    }
+
+}
+const Subd = new B2L10("fiber")
+for (const val of Subd) {
+    //console.log(val)
+}
+
+
+class WaterPresssure {
+    *[Symbol.iterator]() {
+        yield "too low"
+        let result = []
+        let unlisted;
+        let counter = 0
+        let tao = [[11, 13, 7, 43, 67], [11, 3, 89, 101, 55], [9, 19, 29, 29, 49]]
+        let yin = [[33, 22, 10, 5, 64], [10, 20, 80, 40, 20], [2, 22, 30, 14, 100]]
+        for (let i = 0; i < tao.length; i++){
+            for (let j = 0; j < yin.length; j--){
+                if (tao.flat().length > yin.flat().length) {
+                    i += "tao is bigger"
+                    const numfil = tao.filter(num => !num.toString().includes("8").map(num =>
+                        typeof num === "string" ? num.replace(/7/gi, "3.3") : num))
+                    counter ++;
+                    unlisted = Object.freeze({name: "virus"})
+                    result.push(numfil)
+                } else {
+                    j += "yin is bigger"
+                    counter--;
+                }
+            }
+            yield result
+        }
+    }
+}
+const tank = new WaterPresssure()
+for (const val of tank){
+    console.log(val)
+}
+
+
+
 //nums.forEach(num => {result.push(num - 20);});
-//let nums = [10, 20, 30, 40];
-
-//let total = nums.reduce((acc, curr) => acc + curr, 0);
-
 //let filteredObj = Object.fromEntries(
   //Object.entries(scores).filter(([name, score]) => score >= 80));
 
 //let total = Object.values(scores).reduce((acc, val) => acc + val, 0);
-
-//const word = "Aloha";
-
-//for (let i = 0; i < word.length; i++) {
-  //console.log(`Index ${i}: ${word.charAt(i)} -> ${word.charCodeAt(i)}`);
-//}
 
 
 /*
@@ -700,18 +838,6 @@ Number.parseInt
 Number.prototype.toFixed
 Number.prototype.toString
 
-Math Methods---
-Math.abs
-Math.exp
-Math.hypot
-Math.log
-Math.max
-Math.min
-Math.pow
-Math.round
-Math.sign
-Math.sqrt
-Math.trunc
 
 
 Map Methods--
