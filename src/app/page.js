@@ -761,33 +761,67 @@ class WaterPresssure {
 }
 const tank = new WaterPresssure()
 for (const val of tank){
-    console.log(val)
+    //console.log(val)
 }
 
 
 
-//nums.forEach(num => {result.push(num - 20);});
-//let filteredObj = Object.fromEntries(
-  //Object.entries(scores).filter(([name, score]) => score >= 80));
+//today we focus on Objects and global functions
+class CrabIsland {
+    constructor(crab, island) {
+        this.crab = crab
+        this.island = island
+    }
+   *[Symbol.iterator]() {
+    yield "Hermit Crab"
+    let result = {}
+    let species = {
+        crab1: { name: "Coconut Crab", weight: 7, habitat: "land", diet: "Microorganisms" },
+        crab2: { name: "Hermit Crab", weight: 1, habitat: "land", diet: "Algi"  },
+        crab3: { name: "Fiddler Crab", weight: 2, habitat: "land and water", diet: "microorganisms" }
+    }
+    let examineCrab = Object.values(species).map(e => e.name).filter(e => !e.includes("g"))
+    const confirmCrab = structuredClone(examineCrab)
+    for (const key in Object.keys(species)) {
+        if (isNaN(key)){
+            result.push(...species[key])
+            Object.assign(result, confirmCrab)
+            Object.entries(species)
+        } else if(!isFinite(key)) {
+            result.push(...Object.freeze(species[key]))
+            Object.fromEntries(crab1)
+            Object.getPrototypeOf(crab2)
+        } else {
+           result += null
+           Object.hasOwn(crab3, "Hermit Crab")
+            Object.is(weight, 3)
+            Object.setPrototypeOf(habitat, "water")
+        }
 
-//let total = Object.values(scores).reduce((acc, val) => acc + val, 0);
+        }
+        yield "Found all 3 species"
+    }
+   }
+   const bigIsland = new CrabIsland("three", 3)
+   for (const val of bigIsland) {
+    console.log(val)
+   }
 
 
-/*
-//
-global functions--
-isFinite 
-isNaN 
+/*/
+global functions--Stand alone checkers---Strict mode: Number.isFinite()
 parseFloat 
  parseInt 
-decodeURI
-decodeURIComponent
 setTimeout
 clearTimeout
 setInterval
 clearInterval
-structuredClone
 
+
+
+
+/*
+//
 
 string methods--
 codePointAt
@@ -817,17 +851,8 @@ splice
 values
 
 
-Object Methods---
-Object.assign
-Object.entries
-Object.freeze
-Object.fromEntries
-Object.getPrototypeOf
-Object.hasOwn
-Object.is
-Object.keys
-Object.setPrototypeOf
-Object.values
+
+
 
 Number Methods---
 Number.isFinite
@@ -852,7 +877,7 @@ Set.prototype.delete
 Set.prototype.forEach
 
 
-Promise Methods--
+Promise Methods-- async and await functions
 Promise.all
 Promise.any
 Promise.race
