@@ -774,55 +774,112 @@ class CrabIsland {
     }
    *[Symbol.iterator]() {
     yield "Hermit Crab"
-    let result = {}
+    let result = []
     let species = {
-        crab1: { name: "Coconut Crab", weight: 7, habitat: "land", diet: "Microorganisms" },
-        crab2: { name: "Hermit Crab", weight: 1, habitat: "land", diet: "Algi"  },
-        crab3: { name: "Fiddler Crab", weight: 2, habitat: "land and water", diet: "microorganisms" }
+        crab1: { type: "Coconut Crab", weight: 7, habitat: "land", diet: "Microorganisms" },
+        crab2: { type: "Hermit Crab", weight: 1, habitat: "land", diet: "Algi"  },
+        crab3: { type: "Fiddler Crab", weight: 2, habitat: "land and water", diet: "microorganisms" },
+        crab4: {type: "Florida Stone Crab", weight: 4, habitat: "land", diet: "minnows"}
     }
-    let examineCrab = Object.values(species).map(e => e.name).filter(e => !e.includes("g"))
+    let examineCrab = Object.values(species).map(e => e.type.replace("Coco", "Claw" )).filter(e => !e.includes("g"))
     const confirmCrab = structuredClone(examineCrab)
-    for (const key in Object.keys(species)) {
-        if (isNaN(key)){
-            result.push(...species[key])
-            Object.assign(result, confirmCrab)
-            Object.entries(species)
-        } else if(!isFinite(key)) {
-            result.push(...Object.freeze(species[key]))
-            Object.fromEntries(crab1)
-            Object.getPrototypeOf(crab2)
-        } else {
-           result += null
-           Object.hasOwn(crab3, "Hermit Crab")
-            Object.is(weight, 3)
-            Object.setPrototypeOf(habitat, "water")
-        }
+    let entries = Object.entries(species)
 
+    for (const key of Object.keys(species)) {
+        const crab = species[key]
+        if (Object.hasOwn(crab, "habitat")){
+            result.push(`${crab.name} lives on ${crab.habitat}`).map(e => e.includes("rock") ?
+            e.replace("land", "shore") : e)
+            Object.assign(result, confirmCrab)
         }
-        yield "Found all 3 species"
+         if(Object.is(crab.weight, Math.random()*5 + 1)) {
+            result.push(`${crab.name} is the smallest crab`)
+        } else {
+           result.push(null) 
+           Object.freeze(species.crab2)
+           try {
+            species.crab2.weight = 30
+           } catch (error) {
+            result.push("Can't modify frozen crab2")
+           }
+        }
+        let proto = Object.getPrototypeOf(species.crab1)
+        Object.setPrototypeOf(species.crab1, {type: "Crustacean"})
+        let afterProto = Object.getPrototypeOf(species.crab1)
+        let rebuilt = Object.fromEntries(entries)
+        yield {confirmCrab, result, proto, afterProto, rebuilt}
+       
+        }
+         yield "All species identified...Expedition Complete!"
     }
    }
    const bigIsland = new CrabIsland("three", 3)
    for (const val of bigIsland) {
-    console.log(val)
+    //console.log(val)
    }
 
 
-/*/
+
+class FutureAI {
+    *[Symbol.iterator](){
+        yield "Mass Production"
+        let result = []
+        const barrage = [12, 12, 13, 22]
+        yield "Production Freeze"
+        let steps = {
+            step1: {
+                task: "gather materials", budget: 100000, overspend: "No"
+            }, step2: {task: "hire professionals", budget: 50000, overspend: "Yes"},
+            step3: {task: "select timespan", risk: "low", peopleInvolved: 45}}
+
+            let entries = Object.entries(steps)
+            let rebuilt = Object.fromEntries(entries)
+            let rebuiltCopy = structuredClone(rebuilt)
+            for (const key of Object.keys(steps)) {
+                if (Objest.hasOwn(steps, "high")) {
+                    result.push(steps[key])
+                    Object.assign(steps, {step1: {task: "gather information"}})
+                } else if (Object.hasOwn(steps, "medium")) {
+                    Object.freeze(steps.step1)
+                    steps.step1 = {task: "New York"}
+                } else {
+                    rebuiltCopy = 1990 
+                    result.push(rebuiltCopy)
+                }
+                if (Object.is(rebuilt, rebuiltCopy)) {
+                    rebuiltCopy = 1
+                } else if (Object.is(result, barrage)) {
+                    barrage.push(1717)
+                } else {
+                    result = null
+                }
+            }
+            yield "result"
+    }
+}
+const newAI = new FutureAI()
+for (const val of newAI) {
+    console.log(val)
+}
+
+
+/*/	
+Object.seal(obj)	Prevents adding/removing properties (but allows edits)	
+Object.isFrozen(obj), Object.isSealed(obj)	Checks immutability/seal status	
+Object.defineProperty(obj, key, descriptor)	Adds a property with fine-grained control (like read-only, hidden, getter/setter)	
+Object.defineProperties(obj, descriptors)	Adds multiple properties at once	
+Object.create(proto, props?)	Creates new objects with a specific prototype	
+/*
+//
+
 global functions--Stand alone checkers---Strict mode: Number.isFinite()
+isNaN
 parseFloat 
  parseInt 
 setTimeout
 clearTimeout
 setInterval
 clearInterval
-
-
-
-
-/*
-//
-
 string methods--
 codePointAt
 lastIndexOf
