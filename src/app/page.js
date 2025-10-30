@@ -783,13 +783,15 @@ class CrabIsland {
     }
     let examineCrab = Object.values(species).map(e => e.type.replace("Coco", "Claw" )).filter(e => !e.includes("g"))
     const confirmCrab = structuredClone(examineCrab)
+    let ObjCopy = structuredClone(species)
     let entries = Object.entries(species)
 
     for (const key of Object.keys(species)) {
         const crab = species[key]
         if (Object.hasOwn(crab, "habitat")){
-            result.push(`${crab.name} lives on ${crab.habitat}`).map(e => e.includes("rock") ?
+            ObjCopy = [`${crab.name} lives on ${crab.habitat}`].map(e => e.includes("rock") ?
             e.replace("land", "shore") : e)
+            result.push(ObjCopy)
             Object.assign(result, confirmCrab)
         }
          if(Object.is(crab.weight, Math.random()*5 + 1)) {
@@ -836,14 +838,14 @@ class FutureAI {
             let rebuilt = Object.fromEntries(entries)
             let rebuiltCopy = structuredClone(rebuilt)
             for (const key of Object.keys(steps)) {
-                if (Objest.hasOwn(steps, "high")) {
+                if (Object.hasOwn(steps, "high")) {
                     result.push(steps[key])
                     Object.assign(steps, {step1: {task: "gather information"}})
                 } else if (Object.hasOwn(steps, "medium")) {
                     Object.freeze(steps.step1)
                     steps.step1 = {task: "New York"}
                 } else {
-                    rebuiltCopy = 1990 
+                    rebuiltCopy = [1990, 90, 1990]
                     result.push(rebuiltCopy)
                 }
                 if (Object.is(rebuilt, rebuiltCopy)) {
@@ -851,7 +853,7 @@ class FutureAI {
                 } else if (Object.is(result, barrage)) {
                     barrage.push(1717)
                 } else {
-                    result = null
+                    result = []
                 }
             }
             yield "result"
@@ -859,16 +861,53 @@ class FutureAI {
 }
 const newAI = new FutureAI()
 for (const val of newAI) {
+    //console.log(val)
+}
+
+
+
+class SAJungle {
+    constructor(cougar, venusFlyTrap) {
+        this.cat = cougar
+        this.plant = venusFlyTrap
+    }
+    *[Symbol.iterator]() {
+        yield 10
+        let result = []
+        let jungleBiome = {
+            plant1: { name: "Machineel", danger: "high", poisonous: "lethal", lifespan: "unknown"},
+            plant2: {name: "Strychnine", danger: "high", poisonous: "lethal", lifespan: 2},
+            plant3: {name: "Castor Bean", danger: "high", poisonous: "lethal", lifespan: 4},
+            plant4: {name: "Angel's Trumpet", danger: "high", poisonous: "lethal", lifespan: 3}}
+            const jnglBioClone = structuredClone(jungleBiome)
+            for (const key of Object.keys(jungleBiome)) {
+                const plantVal = jungleBiome[key]
+                if (Object.hasOwn(jungleBiome.plant1, "poisonous")) {
+                    //const plantObj = Object.values(jungleBiome.plant1.poisonous, "non-lethal")
+                    result.push(plantVal)
+                } else if (Object.is(jungleBiome, jnglBioClone)) {
+                    jungleBiome = Object.values(jungleBiome).map(e => e.replace(plant2.danger, "medium"))
+                    result.push(plantVal)
+                } else {
+                    const plant5 = Object.create(jnglBioClone.plant3)
+                    result.push(plant5)   
+                }
+            }
+            yield result
+    }
+}
+const jungleData = new SAJungle("Dangerous cats", "Toxic plants")
+for(const val of jungleData) {
     console.log(val)
 }
 
 
+
+
 /*/	
 Object.seal(obj)	Prevents adding/removing properties (but allows edits)	
-Object.isFrozen(obj), Object.isSealed(obj)	Checks immutability/seal status	
 Object.defineProperty(obj, key, descriptor)	Adds a property with fine-grained control (like read-only, hidden, getter/setter)	
 Object.defineProperties(obj, descriptors)	Adds multiple properties at once	
-Object.create(proto, props?)	Creates new objects with a specific prototype	
 /*
 //
 
